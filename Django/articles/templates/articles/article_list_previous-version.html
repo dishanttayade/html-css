@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Article</title>
+    <!link rel="stylesheet" href="/static/styles.css">
+
+<! EITHER you can remove ! above and put it in first line and line below OR vice versa>
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+  <body>
+    <h1>Article List</h1>
+    <div class="articles">
+      {% for article in articles %}
+          <div class="article">
+            <h2> <a href="#">{{ article.title }}</a> </h2>
+            <p>{{ article.snippet }}</p>
+            <p>{{ article.date }}</p>
+          </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
